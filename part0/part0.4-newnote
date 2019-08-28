@@ -1,0 +1,26 @@
+title Adding a new note to the page
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over server:
+writes submitted POST data to data.json
+end note
+server->browser: 302 redirect to /notes
+note over browser:
+browser navigates to /notes
+end note
+browser->server: HTTP GET /notes
+server-->browser: HTML code
+browser->server: HTTP GET /style.css
+server-->browser: style.css
+browser->server: HTTP GET /main.js
+server-->browser: main.js
+note over browser:
+executes main.js,
+which requests data.json
+end note
+browser->server: HTTP GET /data.json
+server-->browser: data.json (with the new data)
+note over browser:
+executes event handler,
+renders the page, including contents
+from data.json
+end note
