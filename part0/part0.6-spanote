@@ -1,0 +1,17 @@
+title User posts note using single page app
+note over browser:
+user writes new note,
+presses submit button
+end note
+note over browser:
+new note is added to the
+end of the notes
+end note
+note over browser:
+browser executes event handler,
+which formats the new note into
+JSON, adds date info and sends it
+to the server
+end note
+browser->server: HTTP POST /new_note_spa
+server-->browser: 201 created {"message":"note created"}
